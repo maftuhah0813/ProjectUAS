@@ -1,18 +1,36 @@
 // app/DetailSurah.js
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useRoute } from '@react-navigation/native';
 import { Audio } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function DetailSurah() {
-  const { params } = useRoute();
-  const surahId = params?.id;
-
+  const { id: surahId } = useLocalSearchParams();
   const [surah, setSurah] = useState(null);
   const [loading, setLoading] = useState(true);
   const [sound, setSound] = useState(null);
+
+  const addBookmark = async (ayah) => {
+  try {
+    const newBookmark = {
+      surah: surah.namaLatin,
+      surahId: surah.nomor,
+      ayahNumber: ayah.nomorAyat,
+      text: ayah.teksIndonesia,
+      arabic: ayah.teksArab,
+    };
+
+    const existing = await AsyncStorage.getItem('bookmarks');
+    const bookmarks = existing ? JSON.parse(existing) : [];
+    bookmarks.push(newBookmark);
+    await AsyncStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    alert('Bookmark ditambahkan!');
+  } catch (e) {
+    console.error(e);
+  }
+  };
 
   useEffect(() => {
     fetch(`https://equran.id/api/v2/surat/${surahId}`)
@@ -87,25 +105,6 @@ export default function DetailSurah() {
     </LinearGradient>
   );
 }
-const addBookmark = async (ayah) => {
-  try {
-    const newBookmark = {
-      surah: surah.namaLatin,
-      surahId: surah.nomor,
-      ayahNumber: ayah.nomorAyat,
-      text: ayah.teksIndonesia,
-      arabic: ayah.teksArab,
-    };
-
-    const existing = await AsyncStorage.getItem('bookmarks');
-    const bookmarks = existing ? JSON.parse(existing) : [];
-    bookmarks.push(newBookmark);
-    await AsyncStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-    alert('Bookmark ditambahkan!');
-  } catch (e) {
-    console.error(e);
-  }
-};
 
 const styles = StyleSheet.create({
   container: { flex: 1 },

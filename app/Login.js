@@ -1,17 +1,19 @@
 // app/Login.js
-import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 
 export default function Login() {
-  const navigation = useNavigation();
+  const router =useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (email && password) {
-      navigation.replace('Home');
+      await AsyncStorage.setItem('userEmail', email);
+      router.replace('/Home');
     } else {
       alert('Isi semua field!');
     }

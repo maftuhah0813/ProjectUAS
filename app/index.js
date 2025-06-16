@@ -1,6 +1,19 @@
 // app/index.js
-import { Redirect } from 'expo-router';
+import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
 
 export default function Index() {
-  return <Redirect href="/SplashScreen" />;
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (router) {
+        router.replace('/SplashScreen');
+      }
+    }, 10);
+
+    return () => clearTimeout(timer);
+  }, [router]);
+
+  return null;
 }

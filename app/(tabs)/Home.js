@@ -1,6 +1,6 @@
 // app/Home.js
-import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 
@@ -9,7 +9,7 @@ export default function Home() {
   const [filtered, setFiltered] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
-  const navigation = useNavigation();
+  const router = useRouter();
 
   useEffect(() => {
     fetch('https://equran.id/api/v2/surat')
@@ -57,7 +57,7 @@ export default function Home() {
         {filtered.map((surah) => (
           <TouchableOpacity
             key={surah.nomor}
-            onPress={() => navigation.navigate('DetailSurah', { id: surah.nomor })}
+            onPress={() => router.push(`/DetailSurah?id=${surah.nomor}`)}
             style={styles.card}
           >
             <Text style={styles.surahTitle}>

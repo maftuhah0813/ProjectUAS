@@ -1,4 +1,3 @@
-
 import { useRouter } from 'expo-router';
 import { useEffect } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
@@ -8,7 +7,7 @@ export default function SplashScreen() {
 
   useEffect(() => {
     setTimeout(() => {
-      router.replace('/Login'); 
+      router.replace('Login'); // ganti ke login setelah splash
     }, 2000);
   }, []);
 
@@ -17,21 +16,13 @@ export default function SplashScreen() {
       <Image
         source={require('../assets/images/Splash.png')}
         style={styles.logo}
-        resizeMode="contain"
+        resizeMode="cover"
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#6FB1FC',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logo: {
-    width: 200,
-    height: 200,
-  },
+  container: { flex: 1, backgroundColor: '#6FB1FC', justifyContent: 'center', alignItems: 'center' },
+  logo: { width: '100%', height: '100%' },
 });

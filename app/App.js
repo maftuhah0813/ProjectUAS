@@ -1,8 +1,8 @@
 // app/App.js
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './(tabs)/Home';
 import DetailSurah from './DetailSurah';
-import Home from './Home';
 import Login from './Login';
 import SplashScreen from './SplashScreen';
 
