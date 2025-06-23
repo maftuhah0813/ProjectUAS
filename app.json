@@ -11,12 +11,16 @@
     "ios": {
       "supportsTablet": true
     },
+    "assetBundlePatterns": [
+        "assets/images/*"
+      ],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.maftuhah.ProjectAlquran"
     },
     "web": {
       "bundler": "metro",
@@ -28,7 +32,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/Splash.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
@@ -37,6 +41,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "5b5e5b59-c920-439e-b258-9c0f9da16978"
+      }
+    },
+    "owner": "maftuhah"
   }
 }

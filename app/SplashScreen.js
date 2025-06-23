@@ -7,7 +7,7 @@ export default function SplashScreen() {
 
   useEffect(() => {
     setTimeout(() => {
-      router.replace('Login'); // ganti ke login setelah splash
+      router.replace('Login');
     }, 2000);
   }, []);
 

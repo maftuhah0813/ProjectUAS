@@ -1,4 +1,4 @@
-// app/Login.js
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
@@ -21,7 +21,7 @@ export default function Login() {
 
   return (
     <LinearGradient colors={['#6FB1FC', '#4364F7']} style={styles.container}>
-      <Image source={require('../assets/images/logo.png')} style={styles.logo} />
+      <Image source={require('../assets/images/logo_alquran.png')} style={styles.logo} />
       <Text style={styles.title}>Aplikasi Al-Qur'an</Text>
 
       <TextInput

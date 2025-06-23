@@ -1,8 +1,8 @@
-// app/Profile.js
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function Profile() {
   const [email, setEmail] = useState('');
@@ -27,6 +27,10 @@ export default function Profile() {
 
   return (
     <View style={styles.container}>
+      <Image
+      source={require('../../assets/images/profile.png')}
+      style={{ width: 120, height: 120, borderRadius: 60, marginBottom: 20 }}
+    />
       <Text style={styles.title}>Profil Pengguna</Text>
       <Text style={styles.label}>Email : </Text>
       <Text style={styles.email}>{email}</Text>
