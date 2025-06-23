@@ -28,7 +28,7 @@ export default function Profile() {
   return (
     <View style={styles.container}>
       <Image
-      source={require('../../assets/images/profile.png')}
+      source={require('../../assets/images/profile_pictures.png')}
       style={{ width: 120, height: 120, borderRadius: 60, marginBottom: 20 }}
     />
       <Text style={styles.title}>Profil Pengguna</Text>

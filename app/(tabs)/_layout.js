@@ -12,14 +12,14 @@ export default function Layout() {
           } else if (route.name === 'Bookmark') {
             return (
               <Image
-                source={require('../../assets/images/iconbook.png')} 
+                source={require('../../assets/images/icon_book.png')} 
                 style={{ width: 20, height: 20, tintColor: color }}
               />
             );
           } else if (route.name === 'Profile') {
             return (
               <Image
-                source={require('../../assets/images/profile.png')}
+                source={require('../../assets/images/profile_pictures.png')}
                 style={{ width: 20, height: 20, tintColor: color }}
               />
             );
