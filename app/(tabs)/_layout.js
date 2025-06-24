@@ -19,7 +19,7 @@ export default function Layout() {
           } else if (route.name === 'Profile') {
             return (
               <Image
-                source={require('../../assets/images/profile_pictures.png')}
+                source={require('../../assets/images/profile_pictures.jpg')}
                 style={{ width: 20, height: 20, tintColor: color }}
               />
             );
