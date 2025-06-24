@@ -1,11 +1,11 @@
 {
   "expo": {
     "name": "ProjectAlquran",
-    "slug": "ProjectAlquran",
+    "slug": "ProjectLoundry",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "projectloundry",
+    "scheme": "ProjectLoundry",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
     "ios": {

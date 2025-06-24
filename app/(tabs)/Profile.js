@@ -29,7 +29,7 @@ export default function Profile() {
     <View style={styles.container}>
       <Image
       source={require('../../assets/images/profile_pictures.png')}
-      style={{ width: 120, height: 120, borderRadius: 60, marginBottom: 20 }}
+      style={{ width: 90, height: 90, borderRadius: 30, marginBottom: 10 }}
     />
       <Text style={styles.title}>Profil Pengguna</Text>
       <Text style={styles.label}>Email : </Text>
